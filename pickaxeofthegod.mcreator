@@ -1,0 +1,254 @@
+{
+  "mod_elements": [
+    {
+      "name": "PickaxeOfTheGodLevel1BlockDestroyedWithTool",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_1_block_destroyed_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PickaxeOfTheGodLevel1",
+      "type": "tool",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_1"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel1ToolInHandTick",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_1_tool_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PickaxeOfTheGodCraft",
+      "type": "recipe",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_craft"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel2",
+      "type": "tool",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_2"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel2BlockDestroyedWithTool",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_2_block_destroyed_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PickaxeOfTheGodLevel2ToolInHandTick",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_2_tool_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PickaxeOfTheGodLevel3",
+      "type": "tool",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_3"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel4",
+      "type": "tool",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_4"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel5",
+      "type": "tool",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_5"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel6",
+      "type": "tool",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_6"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel7",
+      "type": "tool",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_7"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel8",
+      "type": "tool",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_8"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel9",
+      "type": "tool",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_9"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel10",
+      "type": "tool",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_10"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel11",
+      "type": "tool",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_11"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel12",
+      "type": "tool",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_12"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel13",
+      "type": "tool",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_13"
+    },
+    {
+      "name": "PickaxeOfTheGodLevel14",
+      "type": "tool",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_14"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_8": "Pickaxe of the god (level 8)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_9": "Pickaxe of the god (level 9)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_11": "Pickaxe of the god (level 11)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_12": "Pickaxe of the god (level 12)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_13": "Pickaxe of the god (level 13)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_14": "Pickaxe of the god (level 14)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_6": "Pickaxe of the god (level 6)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_7": "Pickaxe of the god (level 7)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_4": "Pickaxe of the god (level 4)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_5": "Pickaxe of the god (level 5)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_2": "Pickaxe of the god (level 2)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_3": "Pickaxe of the god (level 3)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_1": "Pickaxe of the god (level 1)",
+      "item.pickaxeofthegod.pickaxe_of_the_god_level_10": "Pickaxe of the god (level 10)"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "pickaxeofthegod",
+    "modName": "PickaxeOfTheGod",
+    "version": "1.0.0",
+    "author": "ericr, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "modElementsPackage": "fr.shykaruu.pickaxeofthegod",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200234517
+}

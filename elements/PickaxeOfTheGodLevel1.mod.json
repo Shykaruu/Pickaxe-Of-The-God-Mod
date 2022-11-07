@@ -1,0 +1,33 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "god_pickaxe_0",
+    "customModelName": "Normal",
+    "name": "Pickaxe of the god (level 1)",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "TOOLS"
+    },
+    "toolType": "MultiTool",
+    "harvestLevel": 1,
+    "efficiency": 4.0,
+    "attackSpeed": 0.2,
+    "enchantability": 2,
+    "damageVsEntity": 4.0,
+    "usageCount": 100000,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInUseTick": {
+      "name": "PickaxeOfTheGodLevel1ToolInHandTick"
+    },
+    "onBlockDestroyedWithTool": {
+      "name": "PickaxeOfTheGodLevel1BlockDestroyedWithTool"
+    }
+  }
+}

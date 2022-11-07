@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:iron_pickaxe"
+    },
+    "1": {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    "2": {
+      "item": "minecraft:iron_pickaxe"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "pickaxeofthegod:pickaxe_of_the_god_level_1",
+    "count": 1
+  }
+}
