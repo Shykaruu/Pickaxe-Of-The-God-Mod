@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "pickaxeofthegod:items/god_pickaxe_14"
+    "layer0": "pickaxeofthegod:items/god_pickaxe_13"
   }
 }
