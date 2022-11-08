@@ -63,17 +63,17 @@ public class PickaxeOfTheGodLevel1BlockDestroyedWithToolProcedure {
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		(itemstack).setDamage((int) 0);
 		((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putDouble(
-				"PickaxeOfTheGodLevel1Xp", (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-						.getOrCreateTag().getDouble("PickaxeOfTheGodLevel1Xp") + 1));
+				"PickaxeOfTheGodLevelXp", (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.getOrCreateTag().getDouble("PickaxeOfTheGodLevelXp") + 1));
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
 					("\u00A72" + (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-							.getOrCreateTag().getDouble("PickaxeOfTheGodLevel1Xp")) + "\u00A7c/100 xp.")),
+							.getOrCreateTag().getDouble("PickaxeOfTheGodLevelXp")) + "\u00A7c/100 xp.")),
 					(true));
 		}
 		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-				.getDouble("PickaxeOfTheGodLevel1Xp") >= 100) {
-			itemstack.getOrCreateTag().putDouble("PickaxeOfTheGodLevel1Xp", 0);
+				.getDouble("PickaxeOfTheGodLevelXp") >= 100) {
+			itemstack.getOrCreateTag().putDouble("PickaxeOfTheGodLevelXp", 0);
 			if (entity instanceof LivingEntity) {
 				ItemStack _setstack = new ItemStack(PickaxeOfTheGodLevel2Item.block);
 				_setstack.setCount((int) 1);

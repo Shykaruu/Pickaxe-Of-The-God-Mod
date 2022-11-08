@@ -14,6 +14,12 @@ import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.block.BlockState;
 
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
+
+import fr.shykaruu.pickaxeofthegod.procedures.PickaxeOfTheGodLevel13BlockDestroyedWithToolProcedure;
 import fr.shykaruu.pickaxeofthegod.PickaxeofthegodModElements;
 
 import com.google.common.collect.Multimap;
@@ -31,6 +37,20 @@ public class PickaxeOfTheGodLevel13Item extends PickaxeofthegodModElements.ModEl
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemToolCustom() {
+			@Override
+			public boolean onBlockDestroyed(ItemStack itemstack, World world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
+				boolean retval = super.onBlockDestroyed(itemstack, world, blockstate, pos, entity);
+				int x = pos.getX();
+				int y = pos.getY();
+				int z = pos.getZ();
+
+				PickaxeOfTheGodLevel13BlockDestroyedWithToolProcedure.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				return retval;
+			}
 		}.setRegistryName("pickaxe_of_the_god_level_13"));
 	}
 

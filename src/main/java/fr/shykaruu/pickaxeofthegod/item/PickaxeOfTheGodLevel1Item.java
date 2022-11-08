@@ -13,7 +13,6 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
 import java.util.stream.Stream;
@@ -21,7 +20,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import fr.shykaruu.pickaxeofthegod.procedures.PickaxeOfTheGodLevel1ToolInHandTickProcedure;
 import fr.shykaruu.pickaxeofthegod.procedures.PickaxeOfTheGodLevel1BlockDestroyedWithToolProcedure;
 import fr.shykaruu.pickaxeofthegod.PickaxeofthegodModElements;
 
@@ -53,18 +51,6 @@ public class PickaxeOfTheGodLevel1Item extends PickaxeofthegodModElements.ModEle
 								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
-			}
-
-			@Override
-			public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
-				super.inventoryTick(itemstack, world, entity, slot, selected);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				if (selected)
-
-					PickaxeOfTheGodLevel1ToolInHandTickProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("pickaxe_of_the_god_level_1"));
 	}

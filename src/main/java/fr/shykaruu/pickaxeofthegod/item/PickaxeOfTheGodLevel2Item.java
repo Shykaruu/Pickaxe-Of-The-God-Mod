@@ -12,7 +12,6 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
 import java.util.stream.Stream;
@@ -20,7 +19,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import fr.shykaruu.pickaxeofthegod.procedures.PickaxeOfTheGodLevel2ToolInHandTickProcedure;
 import fr.shykaruu.pickaxeofthegod.procedures.PickaxeOfTheGodLevel2BlockDestroyedWithToolProcedure;
 import fr.shykaruu.pickaxeofthegod.PickaxeofthegodModElements;
 
@@ -46,22 +44,12 @@ public class PickaxeOfTheGodLevel2Item extends PickaxeofthegodModElements.ModEle
 				int y = pos.getY();
 				int z = pos.getZ();
 
-				PickaxeOfTheGodLevel2BlockDestroyedWithToolProcedure.executeProcedure(
-						Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				PickaxeOfTheGodLevel2BlockDestroyedWithToolProcedure.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
-			}
-
-			@Override
-			public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
-				super.inventoryTick(itemstack, world, entity, slot, selected);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				if (selected)
-
-					PickaxeOfTheGodLevel2ToolInHandTickProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("pickaxe_of_the_god_level_2"));
 	}

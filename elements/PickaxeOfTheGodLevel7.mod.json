@@ -22,6 +22,9 @@
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onBlockDestroyedWithTool": {
+      "name": "PickaxeOfTheGodLevel7BlockDestroyedWithTool"
+    }
   }
 }

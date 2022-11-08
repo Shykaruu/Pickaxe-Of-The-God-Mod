@@ -2,14 +2,29 @@
 package fr.shykaruu.pickaxeofthegod.item;
 
 import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.block.BlockState;
+
+import java.util.List;
 
 import fr.shykaruu.pickaxeofthegod.PickaxeofthegodModElements;
+
+import com.google.common.collect.Multimap;
+import com.google.common.collect.ImmutableMultimap;
 
 @PickaxeofthegodModElements.ModElement.Tag
 public class PickaxeOfTheGodLevel20Item extends PickaxeofthegodModElements.ModElement {
@@ -22,31 +37,65 @@ public class PickaxeOfTheGodLevel20Item extends PickaxeofthegodModElements.ModEl
 
 	@Override
 	public void initElements() {
-		elements.items.add(() -> new PickaxeItem(new IItemTier() {
-			public int getMaxUses() {
-				return 100000;
+		elements.items.add(() -> new ItemToolCustom() {
+			@Override
+			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
+				super.addInformation(itemstack, world, list, flag);
+				list.add(new StringTextComponent("(niveau max)"));
 			}
 
-			public float getEfficiency() {
-				return 22f;
+			@Override
+			@OnlyIn(Dist.CLIENT)
+			public boolean hasEffect(ItemStack itemstack) {
+				return true;
 			}
-
-			public float getAttackDamage() {
-				return 21f;
-			}
-
-			public int getHarvestLevel() {
-				return 19;
-			}
-
-			public int getEnchantability() {
-				return 2;
-			}
-
-			public Ingredient getRepairMaterial() {
-				return Ingredient.EMPTY;
-			}
-		}, 1, -3f, new Item.Properties().group(ItemGroup.TOOLS)) {
 		}.setRegistryName("pickaxe_of_the_god_level_20"));
+	}
+
+	private static class ItemToolCustom extends Item {
+		protected ItemToolCustom() {
+			super(new Item.Properties().group(null).maxDamage(100000));
+		}
+
+		@Override
+		public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlotType equipmentSlot) {
+			if (equipmentSlot == EquipmentSlotType.MAINHAND) {
+				ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+				builder.putAll(super.getAttributeModifiers(equipmentSlot));
+				builder.put(Attributes.ATTACK_DAMAGE,
+						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 21f, AttributeModifier.Operation.ADDITION));
+				builder.put(Attributes.ATTACK_SPEED,
+						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -3, AttributeModifier.Operation.ADDITION));
+				return builder.build();
+			}
+			return super.getAttributeModifiers(equipmentSlot);
+		}
+
+		@Override
+		public boolean canHarvestBlock(BlockState state) {
+			return 19 >= state.getHarvestLevel();
+		}
+
+		@Override
+		public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
+			return 22f;
+		}
+
+		@Override
+		public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+			stack.damageItem(1, attacker, i -> i.sendBreakAnimation(EquipmentSlotType.MAINHAND));
+			return true;
+		}
+
+		@Override
+		public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
+			stack.damageItem(1, entityLiving, i -> i.sendBreakAnimation(EquipmentSlotType.MAINHAND));
+			return true;
+		}
+
+		@Override
+		public int getItemEnchantability() {
+			return 2;
+		}
 	}
 }

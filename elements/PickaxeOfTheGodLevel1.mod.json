@@ -23,9 +23,6 @@
     "immuneToFire": true,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
-    "onItemInUseTick": {
-      "name": "PickaxeOfTheGodLevel1ToolInHandTick"
-    },
     "onBlockDestroyedWithTool": {
       "name": "PickaxeOfTheGodLevel1BlockDestroyedWithTool"
     }

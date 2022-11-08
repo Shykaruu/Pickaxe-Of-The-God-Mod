@@ -5,12 +5,14 @@
     "renderType": 0,
     "texture": "god_pickaxe_18",
     "customModelName": "Normal",
-    "name": "Pickaxe of the god (level 20)",
-    "specialInfo": [],
+    "name": "§cPickaxe of the god (level 20)",
+    "specialInfo": [
+      "(niveau max)"
+    ],
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "No creative tab entry"
     },
-    "toolType": "Pickaxe",
+    "toolType": "MultiTool",
     "harvestLevel": 19,
     "efficiency": 22.0,
     "attackSpeed": 1.0,
@@ -18,7 +20,7 @@
     "damageVsEntity": 23.0,
     "usageCount": 100000,
     "blocksAffected": [],
-    "hasGlow": false,
+    "hasGlow": true,
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
