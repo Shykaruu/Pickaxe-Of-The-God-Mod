@@ -14,7 +14,7 @@
     },
     "toolType": "MultiTool",
     "harvestLevel": 19,
-    "efficiency": 22.0,
+    "efficiency": 70.0,
     "attackSpeed": 1.0,
     "enchantability": 2,
     "damageVsEntity": 23.0,
@@ -24,6 +24,9 @@
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onItemInUseTick": {
+      "name": "PickaxeOfTheGodLevel20ToolInHandTick"
+    }
   }
 }

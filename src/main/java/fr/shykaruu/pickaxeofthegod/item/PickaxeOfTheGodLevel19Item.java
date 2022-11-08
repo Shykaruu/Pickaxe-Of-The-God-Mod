@@ -80,7 +80,7 @@ public class PickaxeOfTheGodLevel19Item extends PickaxeofthegodModElements.ModEl
 
 		@Override
 		public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
-			return 21f;
+			return 48f;
 		}
 
 		@Override

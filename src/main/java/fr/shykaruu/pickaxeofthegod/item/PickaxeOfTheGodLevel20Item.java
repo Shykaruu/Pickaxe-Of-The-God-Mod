@@ -16,11 +16,17 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.block.BlockState;
 
+import java.util.stream.Stream;
+import java.util.Map;
 import java.util.List;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
+import fr.shykaruu.pickaxeofthegod.procedures.PickaxeOfTheGodLevel20ToolInHandTickProcedure;
 import fr.shykaruu.pickaxeofthegod.PickaxeofthegodModElements;
 
 import com.google.common.collect.Multimap;
@@ -42,6 +48,18 @@ public class PickaxeOfTheGodLevel20Item extends PickaxeofthegodModElements.ModEl
 			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 				super.addInformation(itemstack, world, list, flag);
 				list.add(new StringTextComponent("(niveau max)"));
+			}
+
+			@Override
+			public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
+				super.inventoryTick(itemstack, world, entity, slot, selected);
+				double x = entity.getPosX();
+				double y = entity.getPosY();
+				double z = entity.getPosZ();
+				if (selected)
+
+					PickaxeOfTheGodLevel20ToolInHandTickProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 
 			@Override
@@ -78,7 +96,7 @@ public class PickaxeOfTheGodLevel20Item extends PickaxeofthegodModElements.ModEl
 
 		@Override
 		public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
-			return 22f;
+			return 70f;
 		}
 
 		@Override

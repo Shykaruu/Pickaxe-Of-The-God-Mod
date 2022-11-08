@@ -851,6 +851,22 @@
           }
         ]
       }
+    },
+    {
+      "name": "PickaxeOfTheGodLevel20ToolInHandTick",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pickaxe_of_the_god_level_20_tool_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
